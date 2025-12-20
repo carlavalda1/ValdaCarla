@@ -1,0 +1,18 @@
+{% extends "clases/index.html" %}
+
+
+{% block titulo %}
+    <h1 class="display-5 fw-bold">Formulario del Estudiante</h1>
+{% endblock titulo %}
+
+
+{% block contenido %}
+  
+    <form method="post">
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <input type="submit" class="btn btn-primary" value="Guardar"></input>
+    </form>
+{% endblock contenido %}

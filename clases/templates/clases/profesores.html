@@ -1,16 +1,14 @@
 {% extends "clases/index.html" %}
 
 
-{% block titulo %}<h1 class="display-5 fw-bold">Cursos</h1>{% endblock titulo %}
+{% block titulo %}<h1 class="display-5 fw-bold">Profesores</h1>{% endblock titulo %}
 
-
-{% block contenido %}
 <table>
     <tr>
-        <td width="200"><h2>Cursos</h2></td>
+        <td width="200"><h2>Profesores</h2></td>
         <td>
             <a
-            href="{% url 'cursoForm' %}"
+            href="{% url 'profesorForm' %}"
             class="btn btn-primary btn-sm"
             ><i class="fa fa-plus fa fa-lg" title="Crear"> </i>
             </a>
@@ -22,28 +20,31 @@
 <thead>
     <tr>
         <th>Id</th>
-        <th>Nombre de Curso</th>
-        <th>Profesor</th>
-        <th>Comision</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Email</th>
+        <th>Profesion</th>
         <th>Acciones</th>
     </tr>
 </thead>
 <tbody>
-{% for c in cursos %}
+{% for p in profesores %}
     <tr>
-        <td>{{ c.id }}</td>
-        <td>{{ c.nombre }}</td>
-        <td>{{ c.profesor }}</td>
-        <td>{{ c.comision }}</td>
+        <td>{{ p.id }}</td>
+        <td>{{ p.nombre }}</td>
+        <td>{{ p.apellido }}</td>
+        <td>{{ p.email }}</td>
+        <td>{{ p.profesiones }}</td>
+
         <td>
             <a
-                href="{% url 'cursoUpdate' c.id %}"
+                href="{% url 'profesorUpdate' p.id %}"
                 class="btn btn-primary"
                 style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
                 ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
             </a>
             <a
-                href="{% url 'cursoDelete' c.id %}"
+                href="{% url 'profesorDelete' p.id %}"
                 class="btn btn-danger"
                 style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
                 ><i class="fa fa-trash fa-sm" title="Delete Record"></i>
@@ -53,4 +54,7 @@
 {% endfor %}
 </tbody>
 </table>
+
+{% block contenido %}
+  
 {% endblock contenido %}
