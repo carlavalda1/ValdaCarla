@@ -1,0 +1,15 @@
+{% extends "clases/index.html" %}
+
+
+{% block titulo %}<h1 class="display-5 fw-bold">Buscar Cursos</h1>{% endblock titulo %}
+
+
+{% block contenido %}
+<form action="{% url "encontrarCursos" %}" method="get">
+    {% csrf_token %}
+    <table>
+        <p>Ingrese patron de busqueda <input type="text" name="buscar" id="buscar"></p>
+    </table>
+    <input type="submit" value="Buscar" class="btn btn-primary"></input>
+</form>
+{% endblock contenido %}

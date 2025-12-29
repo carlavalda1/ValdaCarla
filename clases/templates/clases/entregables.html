@@ -3,6 +3,8 @@
 
 {% block titulo %}<h1 class="display-5 fw-bold">Entregables</h1>{% endblock titulo %}
 
+
+{% block contenido %}
 <table>
     <tr>
         <td width="200"><h2>Entregables</h2></td>
@@ -20,8 +22,9 @@
 <thead>
     <tr>
         <th>Id</th>
-        <th>Nombre del Entregable</th>
-        <th>Comision</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Email</th>
         <th>Acciones</th>
     </tr>
 </thead>
@@ -30,7 +33,8 @@
     <tr>
         <td>{{ en.id }}</td>
         <td>{{ en.nombre }}</td>
-        <td>{{ en.comision }}</td>
+        <td>{{ en.apellido }}</td>
+        <td>{{ en.email }}</td>
         <td>
             <a
                 href="{% url 'entregableUpdate' en.id %}"
@@ -49,7 +53,4 @@
 {% endfor %}
 </tbody>
 </table>
-
-{% block contenido %}
-
 {% endblock contenido %}

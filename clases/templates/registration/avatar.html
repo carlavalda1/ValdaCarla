@@ -2,18 +2,18 @@
 
 
 {% block titulo %}
-    <h1 class="display-5 fw-bold">Formulario del Profesor</h1>
+    <h1 class="display-5 fw-bold">Actualizar Avatar</h1>
 {% endblock titulo %}
 
 
 {% block contenido %}
   
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <table>
             {{ form.as_table }}
         </table>
-        <input type="submit" class="btn btn-primary" value="Guardar"></input>
+        <input type="submit" class="btn btn-primary" value="Actualizar"></input>
     </form>
     
 {% endblock contenido %}

@@ -1,7 +1,12 @@
 {% extends "clases/index.html" %}
 
 
-{% block titulo %}<h1 class="display-5 fw-bold">Estudiantes</h1>{% endblock titulo %}
+{% block titulo %}
+    <h1 class="display-5 fw-bold">Estudiantes</h1>
+{% endblock titulo %}
+
+
+{% block contenido %}
 
 <table>
     <tr>
@@ -52,7 +57,5 @@
 {% endfor %}
 </tbody>
 </table>
-
-{% block contenido %}
-  
+ 
 {% endblock contenido %}

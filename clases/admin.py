@@ -9,7 +9,14 @@ class CursoAdmin(admin.ModelAdmin):
 class ProfesorAdmin(admin.ModelAdmin):
     list_display = ("apellido", "nombre", "email", "profesion")
 
+class EstudianteAdmin(admin.ModelAdmin):
+    list_display = ("apellido", "nombre", "email")
+
+class EntregableAdmin(admin.ModelAdmin):
+    list_display = ("nombre", "comision")
+
 admin.site.register(Curso, CursoAdmin)
 admin.site.register(Profesor, ProfesorAdmin)
 admin.site.register(Estudiante)
 admin.site.register(Entregable)
+admin.site.register(Profile)

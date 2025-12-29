@@ -18,6 +18,11 @@
     </tr>
 </table>
 
+{% if not cursos %}
+    <table>
+        No hay datos
+    </table>
+{% else %}
 <table class="table table-striped">
 <thead>
     <tr>
@@ -53,4 +58,6 @@
 {% endfor %}
 </tbody>
 </table>
+{% endif %}
+
 {% endblock contenido %}

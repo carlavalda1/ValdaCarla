@@ -21,12 +21,30 @@
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
                 <a class="navbar-brand" href="{% url 'home' %}">Inicio</a>
-                <a class="navbar-brand" href="{% url 'cursos' %}">Cursos</a>
-                <a class="navbar-brand" href="{% url "profesores" %}">Profesores</a>
-                <a class="navbar-brand" href="{% url "estudiantes" %}">Estudiantes</a>
-                <a class="navbar-brand" href="{% url "entregables" %}">Entregables</a>
-                <a class="navbar-brand" href="{% url "aboutme"%}">About Me</a>
-                <a class="btn btn-primary" href="#signup">Sign Up</a>   
+                {% if user.is_authenticated %}
+                    <a class="navbar-brand" href="{% url 'cursos' %}">Cursos</a>
+                    <a class="navbar-brand" href="{% url "profesores" %}">Profesores</a>
+                    <a class="navbar-brand" href="{% url "estudiantes" %}">Estudiantes</a>
+                    <a class="navbar-brand" href="{% url "entregables" %}">Entregables</a>
+                    <a class="navbar-brand" href="{% url "aboutme"%}">Acerca de Mi</a>
+
+
+                <span>
+                    <p style="color:blue">{{ user.username }}<br>[{{ user.first_name }} {{ user.last_name }}] </p>
+                </span>
+                <div class="text-center">
+                    <a href="{% url "avatar" %}"><img src="{{ user.profile.avatar.url }}" height="40px" weight="40px" alt="Fotos"></a>
+                </div>
+                <a class="navbar-brand" href="{% url "perfil" %}">Perfil</a>
+                    <form action="{% url "logout" %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-primary">Logout</button>
+                    </form>
+                {% else %}
+                    <a class="btn btn-primary" href="{% url "login" %}">Login</a>
+                    <a class="btn btn-succes" href="{% url "register" %}">Registrarse</a>
+                {% endif %}
+                
             </div>
         </nav>
         <!-- Header-->

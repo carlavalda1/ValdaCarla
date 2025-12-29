@@ -1,5 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
+
+from django.contrib.auth.views import LogoutView
 from .views import *
 
 urlpatterns = [
@@ -15,16 +17,26 @@ urlpatterns = [
     path("profesorUpdate/<id>/", profesorUpdate, name="profesorUpdate"),
     path("profesorDelete/<id>/", profesorDelete, name="profesorDelete"),
 
-    path("estudiantes/", estudiantes, name="estudiantes"),
-    path("estudianteForm/", estudianteForm, name="estudiantesForm"),
-    path("estudianteUpdate/<id>/", estudianteUpdate, name="estudianteUpdate"),
-    path("estudianteDelete/<id>/", estudianteDelete, name="estudianteDelete"),
-    
+    path("estudiantes/", EstudianteListView.as_view(), name="estudiantes"),
+    path("estudianteCreate/", EstudianteCreateView.as_view(), name="estudianteCreate"),
+    path("estudianteUpdate/<int:pk>/", EstudianteUpdateView.as_view(), name="estudianteUpdate"),
+    path("estudianteDelete/<int:pk>/", EstudianteDeleteView.as_view(), name="estudianteDelete"),
+
     path("entregables/", entregables, name="entregables"),
     path("entregableForm/", entregableForm, name="entregableForm"),
     path("entregableUpdate/<id>/", entregableUpdate, name="entregableUpdate"),
     path("entregableDelete/<id>/", entregableDelete, name="entregableDelete"),
+   
+    path("aboutme/", aboutme, name="aboutme"),
 
-    path("aboutme/", aboutme, name="aboutme")
+    #Buscar
+    path("buscarCursos/", buscarCursos, name="buscarCursos"),
+    path("encontrarCursos/", encontrarCursos, name="encontrarCursos"),
 
-]
+    path("login/", CustomLoginView.as_view(), name="login"),
+    path("logout/", LogoutView.as_view(next_page="home"), name="logout"),
+    path("register/", register, name="register"),
+    path("perfil/", perfil, name="perfil"),
+    path("avatar/", avatar, name="avatar"), 
+    
+    ]

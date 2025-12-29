@@ -1,7 +1,12 @@
 {% extends "clases/index.html" %}
 
 
-{% block titulo %}<h1 class="display-5 fw-bold">Profesores</h1>{% endblock titulo %}
+{% block titulo %}
+    <h1 class="display-5 fw-bold">Profesores</h1>
+{% endblock titulo %}
+
+
+{% block contenido %}
 
 <table>
     <tr>
@@ -34,7 +39,7 @@
         <td>{{ p.nombre }}</td>
         <td>{{ p.apellido }}</td>
         <td>{{ p.email }}</td>
-        <td>{{ p.profesiones }}</td>
+        <td>{{ p.profesion }}</td>
 
         <td>
             <a
@@ -55,6 +60,4 @@
 </tbody>
 </table>
 
-{% block contenido %}
-  
 {% endblock contenido %}

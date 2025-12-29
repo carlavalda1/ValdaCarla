@@ -7,11 +7,10 @@
 
 
 {% block contenido %}
-  
     <form method="post">
         {% csrf_token %}
         <table>
-            {{form.as_table}}
+            {{ form.as_table }}
         </table>
         <input type="submit" class="btn btn-primary" value="Guardar"></input>
     </form>
