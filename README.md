@@ -61,3 +61,5 @@ Para usar el panel, es necesario crear un **superusuario**
 - **Templates**: `clases/templates/clases/`
 - **Configuración del proyecto**: `miprimerapaginavalda/settings.py`
 - **Autenticación y Perfil**: `usuarios/` (modelos, vistas y templates relacionados)
+
+Link de Google Drive con video que muestra la página y sus funcionalidades:(https://drive.google.com/drive/u/0/folders/1yarwdNyb6yE4qNtQW95kmJPWLIXDJUCP)
