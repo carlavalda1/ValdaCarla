@@ -1,0 +1,18 @@
+# Python / Django temporales
+__pycache__/
+*.pyc
+
+# Base de datos local (ajusta a tu nombre real)
+db.sqlite3
+curso.db
+*.db
+
+# Archivos subidos por usuarios
+media/
+
+# Entornos virtuales
+venv/
+.venv/
+
+# Variables de entorno
+*.env
